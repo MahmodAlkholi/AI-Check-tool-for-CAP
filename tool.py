@@ -6,6 +6,7 @@ from openai import OpenAI
 load_dotenv()
 
 # Access variables
+load_dotenv(dotenv_path="/run/media/storm/local1/PEX company/crewai/chick updates tool/.env")
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 
 
