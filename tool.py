@@ -13,7 +13,8 @@ if not load_dotenv():
     print("Warning: .env file not found or could not be loaded.")
 
 # Fetch API key
-api_key = os.getenv("OPENAI_API_KEY")
+#api_key = os.getenv("OPENAI_API_KEY")
+api_key = st.secrets["OPENAI_API_KEY"]
 
 
 def check():
