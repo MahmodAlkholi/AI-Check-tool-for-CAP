@@ -6,13 +6,19 @@ from openai import OpenAI
 load_dotenv()
 
 # Access variables
-load_dotenv(dotenv_path="/run/media/storm/local1/PEX company/crewai/chick updates tool/.env")
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+#load_dotenv(dotenv_path="/run/media/storm/local1/PEX company/crewai/chick updates tool/.env")
+#os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
+
+if not load_dotenv():
+    print("Warning: .env file not found or could not be loaded.")
+
+# Fetch API key
+api_key = os.getenv("OPENAI_API_KEY")
 
 
 def check():
 
-    client = OpenAI()
+    client = OpenAI(api_key)
 
     completion = client.chat.completions.create(
         model="gpt-4o-search-preview",
